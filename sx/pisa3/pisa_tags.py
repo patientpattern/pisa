@@ -18,21 +18,13 @@ __reversion__ = "$Revision: 20 $"
 __author__ = "$Author: holtwick $"
 __date__ = "$Date: 2007-10-09 12:58:24 +0200 (Di, 09 Okt 2007) $"
 
-from pisa_default import DEFAULT_CSS
 from pisa_reportlab import *
 from pisa_util import *
 
 from reportlab.graphics.barcode.code39 import Standard39
-from reportlab.lib.styles import ParagraphStyle
 from reportlab.platypus.flowables import *
 from reportlab.platypus.paraparser import tt2ps, ABag
 
-from reportlab_paragraph import cleanBlockQuotedText
-
-import reportlab.lib.utils
-
-import os
-import pprint
 import re
 import warnings
 
@@ -390,11 +382,11 @@ if 0:
                 width = 100
                 height = 12            
             c.addStory(pisa_reportlab.PmlInput(attr.name,
-                type=attr.type,
-                default=attr.value,
-                width=width,
-                height=height,
-                ))
+                                               type=attr.type,
+                                               default=attr.value,
+                                               width=width,
+                                               height=height,
+                                               ))
             
         def end(self, c):        
             c.addPara()
@@ -407,9 +399,9 @@ if 0:
                
         def _render(self, c, attr):
             c.addStory(pisa_reportlab.PmlInput(attr.name,
-                default="",
-                width=100,
-                height=100))
+                                               default="",
+                                               width=100,
+                                               height=100))
     
     class pisaTagSELECT(pisaTagINPUT):
         
@@ -418,11 +410,11 @@ if 0:
             
         def _render(self, c, attr):
             c.addStory(pisa_reportlab.PmlInput(attr.name,
-                type="select",
-                default=c.select_options[0],
-                options=c.select_options,
-                width=100,
-                height=40))
+                                               type="select",
+                                               default=c.select_options[0],
+                                               options=c.select_options,
+                                               width=100,
+                                               height=40))
             c.select_options = None
     
     class pisaTagOPTION(pisaTag):

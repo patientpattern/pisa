@@ -37,6 +37,7 @@ Optional packages:
 import logging
 log = logging.getLogger(__name__)
 
+# noinspection PyInterpreter
 try:
     from pisa import *
     if not REPORTLAB22:
