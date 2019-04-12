@@ -43,8 +43,6 @@ setup(
     include_package_data = False,
 
     packages = [
-        'ho',
-        'ho.pisa',
         'sx',
         'sx.pisa3',
         'sx.w3c',
